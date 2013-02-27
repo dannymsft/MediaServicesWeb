@@ -1,0 +1,68 @@
+﻿<!-- Workflow Panel -->
+<div id="osx-modal-content">
+	<div id="osx-modal-title">Azure Media Services Workflow</div>
+	<div class="close"><a href="#" class="simplemodal-close">x</a></div>
+	<div id="osx-modal-data">
+        <!-- Smart Tabs -->
+	    <div id="tabsWorkflow" class="swMain">
+	        <ul class="anchor">
+	            <li><a href="#tabs-1">
+	                    <label class="stepNumber">1</label>
+	                    <span class="stepDesc">Ingest<br/>
+	                        <small>Create and Upload Assets</small>
+	                    </span>
+	                </a></li>
+	            <li><a href="#tabs-2">
+	                    <label class="stepNumber">2</label>
+	                    <span class="stepDesc">Encode<br/>
+	                        <small>Create Job and Tasks</small>
+	                    </span>
+	                </a></li>
+	            <li><a href="#tabs-3">
+	                    <label class="stepNumber">3</label>
+	                    <span class="stepDesc">Protect<br/>
+	                        <small>Encryption and Digital Rights</small>
+	                    </span>                   
+	                </a></li>
+	            <li><a href="#tabs-4">
+	                    <label class="stepNumber">4</label>
+	                    <span class="stepDesc">Execute<br/>
+	                        <small>Encoding Job Summary</small>
+	                    </span>                   
+	                </a></li>
+	        </ul>
+	        <div id="tabs-1">
+	            <h2 class="StepTitle">Ingest Assets</h2>
+
+	            <div id="uploader" style="height: 200px">
+	                <p>Media File Uploader is being loaded...</p>
+	            </div>
+	        </div>
+	        <div id="tabs-2">
+	            <h2 class="StepTitle">Encoder Task Presets</h2>	
+	            <!-- Encoders -->
+	            @{
+	                Html.RenderAction("EncodersAction", "Home");
+	            }
+	        </div>                      
+	        <div id="tabs-3">
+	            <h2 class="StepTitle">Protect Assets</h2>  
+	            <!-- Protection -->
+	            @{
+	                Html.RenderPartial("_Protection");
+	            }
+	        </div>
+	        <div id="tabs-4">
+	            <h2 class="StepTitle">Deliver Assets</h2>	
+	            <p>Please review the selected options before starting the media encoding processing.</p>
+	            <p>To begin the Windows Azure Media Services encoding process, click <b>Finish</b>.</p>
+	        </div>
+	        <div class="actionBar">
+	            <a href="#" class="buttonFinish">Finish</a>
+	            <a href="#" class="buttonNext">Next</a>
+	            <a href="#" class="buttonPrevious">Back</a>
+	        </div>  
+	    </div>  
+	</div>
+</div>
+<!-- End of Workflow Panel -->

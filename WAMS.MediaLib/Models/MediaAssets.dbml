@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WAMS.DB" Class="MediaAssetsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDb)\V11.0;Initial Catalog=WAMS.DB;Integrated Security=True" SettingsObjectName="WAMS.MediaLib.Properties.Settings" SettingsPropertyName="WAMS_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MediaAssets" Member="MediaAssets">
+    <Type Name="MediaAsset">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Encoding" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpireOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OriginalFile" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ProcessingTime" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="Protection" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Renderer" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thumbnail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

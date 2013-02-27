@@ -1,0 +1,136 @@
+﻿@model string
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Windows Azure Media Services App on SharePoint 2013";
+}
+
+
+
+@Styles.Render("~/Content/SmartWizard/css")
+@Styles.Render("~/Content/PlUpload/css")
+@Styles.Render("~/Content/DataTables/css")
+
+
+@Scripts.Render("~/bundles/smartWizard")
+@Scripts.Render("~/bundles/PlUpload")
+@Scripts.Render("~/bundles/PlUpload/UI")
+@*@Scripts.Render("~/bundles/DataTables")*@
+<script type="text/javascript" src="~/Scripts/dataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="~/Scripts/dataTables/dataTablesSort.js"></script>
+
+
+<script type="text/javascript" src="~/Scripts/statusbar.js"></script>
+<script type="text/javascript" src="~/Scripts/moment_min.js"></script>
+<script type="text/javascript" src="~/Scripts/main.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.iphone-switch.js"></script>
+
+<style>
+
+.left{
+    float:left;
+    width:140px;
+    margin-left: 5px;
+}
+
+
+</style>
+
+
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <div id="dataSource">@ViewBag.Message</div>
+        </div>
+        @if (ViewBag.Mode == "O365")
+        {
+            <div class="left"><h3>Use SQL Azure DB: </h3></div>
+            <div class="left" id="switch"></div>
+        }
+    </section>
+}
+
+
+
+@{
+    Html.RenderPartial("_MediaAssets");
+}
+
+
+
+<br/>
+<div ID="mediaPlayerPanel" class="media-panel" style="display: none">
+    <img id="closeMediaButton" src="~/Images/button-cancel.png" 
+                style="width:20px; height:20px;" onclick="closeMediaPlayer()" alt="Close" 
+                onmouseover="this.style.cursor='pointer'"
+                onmouseout="this.style.cursor='default'" />
+    <video id="myVideo" src="" autoplay controls></video>
+</div>
+<div id="silverlightControlHost"  class="media-panel" style="width: 0px; height: 0px; position:absolute; left: -1000px">
+    <img id="closePlayerButton" src="~/Images/button-cancel.png" 
+                style="width:20px; height:20px;" onclick="closeSSPlayer()" alt="Close" 
+                onmouseover="this.style.cursor='pointer'"
+                onmouseout="this.style.cursor='default'" />
+    <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="820px" height="480px">
+        <param name="source" value="ClientBin/SSPlayer.xap"/>
+        <param name="onload" value="pluginLoaded" />
+        <param name="background" value="transparent" />
+        <param name="windowless" value="true"/>
+        <param name="enableHtmlAccess" value="true" />
+        <param name="enableGPUAcceleration" value="true" />
+        <param name="minRuntimeVersion" value="5.1.10411.0"/>
+        <param name="autoUpgrade" value="true"/>
+        <param name="InitParams" value="scriptableName=Player"/>
+        <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50303.0" style="text-decoration:none">
+            <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
+        </a>
+    </object>
+    <iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
+</div>
+
+@{
+    Html.RenderPartial("_Wizard");
+}
+
+<br />
+
+
+<div id="fxshell-drawer-surround" class="fx-bottom-strip">
+    <img id="imgNew" src="~/Images/New.png" alt="New Asset" class="fx-button-new osx" 
+        onmouseover="this.style.cursor='pointer'; this.src='/Images/New-highlighted.png'" 
+        onmouseout="this.style.cursor='default'; this.src='/Images/New.png'" />
+    <img id="imgSource" alt="Source" src="~/Images/TFS-normal.png" class="fx-source-code" 
+        onmouseover="this.style.cursor='pointer'; this.src='/Images/TFS-highlighted.png'" 
+        onmouseout="this.style.cursor='default'; this.src='/Images/TFS-normal.png'"
+        onclick="window.open('https://dannygar.tfspreview.com/DefaultCollection/WAMS')" />
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.post("Home/GetCurrentConnection", null, function(switchPosition) {
+            $('#switch').iphoneSwitch(switchPosition,
+                function() {
+                    $.post("Home/SqlOn", null, function (data) {
+                        document.getElementById('dataSource').innerHTML = data;
+                        //Update the data table
+                        window.oTable.fnDraw();
+                    });
+                },
+                function() {
+                    $.post("Home/TablesOn", null, function(data) {
+                        document.getElementById('dataSource').innerHTML = data;
+                        //Update the data table
+                        window.oTable.fnDraw();
+                        //location.reload();
+                    });
+                },
+                {
+                    switch_on_container_path: '/Images/iphone_switch_container_off.png'
+                });
+        });
+    });
+</script>

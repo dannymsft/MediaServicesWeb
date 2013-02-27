@@ -1,0 +1,18 @@
+﻿@model FormCollection
+
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+<p>
+    You chose:
+    @foreach (var item in Model.AllKeys)
+    {
+        @Model[item]@: 
+    } 
+</p>
+
+<p>
+    @Html.ActionLink("Home", "Index")
+</p>

@@ -1,0 +1,29 @@
+﻿@model string
+
+@Styles.Render("~/Content/Select2/css")
+@Scripts.Render("~/bundles/Select2")
+@Scripts.Render("~/bundles/SlimScroll")
+
+
+<div class="float-left">
+    <div id="taskPresets" ></div>
+</div>
+<div id="divProcessor" class="float-right">
+    <h3>Choose Media Processor Task:</h3>
+    <select id="mediaProcessor">
+        <option value="Windows Azure Media Encoder">Encode Using Microsoft Windows Azure Media Encoder</option>
+        <option value="MP4 to Smooth Streams">Convert .MP4 Media Content to Smooth Streams</option>
+        <option value="Smooth Streams to Apple HTTP Live Streams">Convert Smooth Streams to Apple HTTP Live Streams</option>
+    </select>
+</div>
+
+
+
+<script type="text/javascript">
+    treeModel = @Html.Raw(Model)
+</script>
+
+
+
+<script src="@Url.Content("~/Scripts/jquery.jstree.js")" type="text/javascript"></script>
+@Scripts.Render("~/bundles/Encoders")

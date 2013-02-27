@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>jquery.simplemodal</id>
+    <version>1.4.3.1</version>
+    <title>Jquery Simplemodal extension</title>
+    <authors>Eric Martins</authors>
+    <owners>Eric Martins</owners>
+    <projectUrl>http://www.ericmmartin.com/projects/simplemodal/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Jquery simple modal extension</description>
+    <dependencies>
+      <dependency id="JQuery" version="1.4.0.0" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualLightBox>
+    <Gallery version="2.5">
+        <Settings>
+            <AppName>WOW Slider</AppName>
+            <AppUrlS>WOWSlider.com</AppUrlS>
+            <AppVersion>2.8</AppVersion>
+            <AutoPlay>false</AutoPlay>
+            <Captions>true</Captions>
+            <CaptionsEffect>move</CaptionsEffect>
+            <Controls>true</Controls>
+            <GalleryName>Select Asset Protection Level</GalleryName>
+            <GallerySuffix>1</GallerySuffix>
+            <HtmlCharset>UTF-8</HtmlCharset>
+            <ImageAspectRatio>true</ImageAspectRatio>
+            <ImageEffect>stack</ImageEffect>
+            <ImageHeight>290</ImageHeight>
+            <ImageQuality>100</ImageQuality>
+            <ImageShrink2>true</ImageShrink2>
+            <ImageStretch>false</ImageStretch>
+            <ImageTemplate>C:/Program Files (x86)/WOW Slider/templates/backgnd/crystal/</ImageTemplate>
+            <ImageTemplateName>Crystal</ImageTemplateName>
+            <ImageWidth>290</ImageWidth>
+            <Images>true</Images>
+            <OneLoop>false</OneLoop>
+            <OrderRandom>false</OrderRandom>
+            <Preloader>false</Preloader>
+            <PublishFileName>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web/wow.html</PublishFileName>
+            <PublishIndex>wow.html</PublishIndex>
+            <PublishPath>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web</PublishPath>
+            <PublishPreview>true</PublishPreview>
+            <PublishType>file</PublishType>
+            <RelativePath>false</RelativePath>
+            <ShowBullets>0</ShowBullets>
+            <ShowTooltips>true</ShowTooltips>
+            <SlideshowDelay>20</SlideshowDelay>
+            <SlideshowDuration>20</SlideshowDuration>
+            <SoundEnable>0</SoundEnable>
+            <SoundFileName></SoundFileName>
+            <StopOnHover>true</StopOnHover>
+            <TemplateName>crystal</TemplateName>
+            <ThumbAlign>bottom</ThumbAlign>
+            <ThumbFormat>jpg</ThumbFormat>
+            <ThumbHeight>48</ThumbHeight>
+            <ThumbQuality>90</ThumbQuality>
+            <ThumbWidth>0</ThumbWidth>
+            <Thumbnails>false</Thumbnails>
+            <TooltipPos>top</TooltipPos>
+            <WatermarkAlign>66</WatermarkAlign>
+            <WatermarkBgColor>#ffffff</WatermarkBgColor>
+            <WatermarkColor>#514242</WatermarkColor>
+            <WatermarkHaveBgColor>true</WatermarkHaveBgColor>
+            <WatermarkOpacity>80</WatermarkOpacity>
+            <noFrame>1</noFrame>
+        </Settings>
+        <Images RelativePath="false">
+            <Image>
+                <url>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web/Images/protection/https.png</url>
+                <title>Users must present a Secure Access Signature (SAS) token to be granted access</title>
+                <userurl>changeProtection(1);</userurl>
+                <usertarget>_self</usertarget>
+            </Image>
+            <Image>
+                <url>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web/Images/protection/encrypted.jpg</url>
+                <title>Built-in protection for assets by encrypting them before they are published into Azure storage</title>
+                <userurl>changeProtection(1);</userurl>
+                <usertarget>_self</usertarget>
+            </Image>
+            <Image>
+                <url>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web/Images/protection/ultraviolet.jpg</url>
+                <title>UltraViolet (UV) is a digital rights authentication and cloud-based licensing system</title>
+                <userurl>changeProtection(2);</userurl>
+                <usertarget>_self</usertarget>
+            </Image>
+            <Image>
+                <url>C:/Projects/Demos/Media Services/SPMediaServices/WAMS.Web/Images/protection/playready.jpg</url>
+                <title>Microsoft PlayReady is a content access and protection technology for digital entertainment services, devices and applications.</title>
+                <userurl>changeProtection(3);</userurl>
+                <usertarget>_self</usertarget>
+            </Image>
+        </Images>
+    </Gallery>
+</VisualLightBox>

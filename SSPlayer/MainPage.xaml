@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="SSPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Core="clr-namespace:Microsoft.SilverlightMediaFramework.Core;assembly=Microsoft.SilverlightMediaFramework.Core" 
+    xmlns:Media="clr-namespace:Microsoft.SilverlightMediaFramework.Core.Media;assembly=Microsoft.SilverlightMediaFramework.Core"              
+    mc:Ignorable="d"
+    d:DesignHeight="420" d:DesignWidth="960">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Core:SMFPlayer x:Name="MediaPlayer" IsControlStripVisible="False" PlaylistVisibility="Disabled" ScriptableName="fPlayer">
+        </Core:SMFPlayer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,78 @@
+﻿
+<!-- Wizard Panel -->
+<div id="osx-modal-content">
+    <div id="osx-modal-title">Azure Media Services Workflow</div>
+    <div class="close"><a href="#" class="simplemodal-close" onclick="closeWizard()">x</a></div>
+    <div id="osx-modal-data">
+        <!-- Smart Wizard -->
+        <div id="wizard" class="swMain">
+            <ul>
+                <li><a href="#step-1">
+                        <label class="stepNumber">1</label>
+                        <span class="stepDesc">
+                            Ingest<br />
+                            <small>Create and Upload Assets</small>
+                        </span></a>
+                </li>
+                <li><a href="#step-2">
+                        <label class="stepNumber">2</label>
+                        <span class="stepDesc">
+                            Encode<br />
+                            <small>Create Job and Tasks</small>
+                        </span></a>
+                </li>
+                <li><a href="#step-3">
+                        <label class="stepNumber">3</label>
+                        <span class="stepDesc">
+                            Protect<br />
+                            <small>Encryption and Digital Rights</small>
+                        </span></a>
+                </li>
+                <li><a href="#step-4">
+                        <label class="stepNumber">4</label>
+                        <span class="stepDesc">
+                            Stream<br />
+                            <small>Delivery and Distribution</small>
+                        </span></a>
+                </li>
+            </ul>
+            <div id="step-1">  
+                <h2 class="StepTitle">Ingest Assets</h2>
+
+                <div id="uploader">
+                    <p>Media File Uploader is being loaded...</p>
+                </div>
+                <div id="uploaderLog" style="visibility:hidden">
+                    <textarea id="log" style="width: 100%; height: 150px; font-size: 11px" spellcheck="false" wrap="off"></textarea>
+                </div>
+            </div>
+            <div id="step-2">
+                <h2 class="StepTitle">Encoder Task Presets</h2>	
+                <!-- Encoders -->
+                @{
+                    Html.RenderAction("EncodersAction", "Home");
+                }
+            </div>                     
+            <div id="step-3">
+                <h2 class="StepTitle">Protect Assets</h2>  
+                <!-- Protection -->
+                @{
+                    Html.RenderPartial("_Protection");
+                }
+            </div>
+            <div id="step-4">
+                <h2 class="StepTitle">Deliver Assets</h2>	
+              
+                <p>Please review the selected options before starting the media encoding processing.</p>
+                <div id="summaryPanel" class="panel-summary"></div>
+                <p>To begin the Windows Azure Media Services encoding process, click <b>Finish</b>.</p>
+            </div>
+        </div>
+        <!-- End SmartWizard Content -->  		
+    </div>
+
+<!-- End of Wizard Panel -->
+</div>
+
+
+@Scripts.Render("~/bundles/Uploader")

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Windows Azure Media Services Portal Demo</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        @Styles.Render("~/Content/SimpleModal/css")
+
+        @Scripts.Render("~/bundles/modernizr")
+@*        @Scripts.Render("~/bundles/jquery")*@
+        
+        <script type="text/javascript" src="~/Scripts/jquery-1.9.0.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-migrate-1.0.0.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.0.custom.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.simplemodal-1.4.3.js"></script>
+        <script type="text/javascript" src="~/Scripts/osx.js"></script>
+
+        <script type="text/javascript" src="~/Scripts/chrome.js"></script>
+
+    </head>
+    <body>
+        @if (ViewBag.Mode == "O365")
+        {
+            <!-- Chrome control placeholder -->
+            <div id="chrome_ctrl_placeholder"></div>
+        }
+        else
+        {
+            <header>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p class="site-title">@Html.ActionLink("Azure Media Services Demo Portal", "VOD", "Home")</p>
+                    </div>
+                    <div class="float-right">
+                        <section id="login">
+                            @Html.Partial("_LoginPartial")
+                        </section>
+                        <nav>
+                            <ul id="menu">
+                                <li>@Html.ActionLink("Video On Demand", "VOD", "Home")</li>
+                                <li>@Html.ActionLink("Live Streaming", "LiveStreaming", "Home")</li>
+                                <li><a href="elmah.axd">Logs</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        }
+
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Written by Danny Garber, Windows Azure CoE, Microsoft Corporation</p>
+                </div>
+            </div>
+        </footer>
+
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

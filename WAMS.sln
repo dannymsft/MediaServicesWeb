@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAMS.Web", "WAMS.Web\WAMS.Web.csproj", "{667B2D19-7D75-458D-80EB-7BC0B0B25B6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAMS.MediaLib", "WAMS.MediaLib\WAMS.MediaLib.csproj", "{1AFA97A7-A232-459B-88E0-FA4CD705E09D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSPlayer", "SSPlayer\SSPlayer.csproj", "{E9E1958B-CBEB-4DF3-89C1-B52B9ABE291B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{667B2D19-7D75-458D-80EB-7BC0B0B25B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667B2D19-7D75-458D-80EB-7BC0B0B25B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667B2D19-7D75-458D-80EB-7BC0B0B25B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667B2D19-7D75-458D-80EB-7BC0B0B25B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AFA97A7-A232-459B-88E0-FA4CD705E09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFA97A7-A232-459B-88E0-FA4CD705E09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AFA97A7-A232-459B-88E0-FA4CD705E09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AFA97A7-A232-459B-88E0-FA4CD705E09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E1958B-CBEB-4DF3-89C1-B52B9ABE291B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E1958B-CBEB-4DF3-89C1-B52B9ABE291B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E1958B-CBEB-4DF3-89C1-B52B9ABE291B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E1958B-CBEB-4DF3-89C1-B52B9ABE291B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
+	EndGlobalSection
+EndGlobal
